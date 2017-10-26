@@ -1,0 +1,20 @@
+<div id="navi">
+    <a href="/dashboard">Cancel</a>
+</div>
+
+<div>
+    <h3>Put the question and options here:</h3>
+    <form (submit)="add_question" #new_question_form="ngForm">
+        <h5>Question:</h5>
+        <input type="text" name="question" [(ngModel)]="new_question.question" required minlength="8" #new_question_make="ngModel" placeholder="Enter question here"><span *ngIf="new_question_make.errors">ERROR!!!</span><span *ngIf="new_question_make.errors?.required">This field is required!</span>
+        <h5>Option 1:</h5>
+        <input type="text" name="option1" [(ngModel)]="new_question.option1" required minlength="3" #new_question_option1="ngModel" placeholder="Enter option here"><span *ngIf="new_question_option1.errors">ERROR!!!</span><span *ngIf="new_question_option1.errors?.required">This field is required!</span>
+        <h5>Option 2:</h5>
+        <input type="text" name="option2" [(ngModel)]="new_question.option2" required minlength="3" #new_question_option2="ngModel" placeholder="Enter option here"><span *ngIf="new_question_option2.errors">ERROR!!!</span><span *ngIf="new_question_option2.errors?.required">This field is required!</span>
+        <h5>Option 3:</h5>
+        <input type="text" name="option3" [(ngModel)]="new_question.option3" required minlength="3" #new_question_option3="ngModel" placeholder="Enter option here"><span *ngIf="new_question_option3.errors">ERROR!!!</span><span *ngIf="new_question_option3.errors?.required">This field is required!</span>
+        <h5>Option 4:</h5>
+        <input type="text" name="option4" [(ngModel)]="new_question.option4" required minlength="3" #new_question_option4="ngModel" placeholder="Enter option here"><span *ngIf="new_question_option4.errors">ERROR!!!</span><span *ngIf="new_question_option4.errors?.required">This field is required!</span>
+        <p><button id="button" onclick="window.location.href='/dashboard'" [disabled]="!new_question_form.valid">Create Poll</button></p>
+    </form>
+</div>

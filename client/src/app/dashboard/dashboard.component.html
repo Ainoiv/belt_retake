@@ -1,0 +1,30 @@
+<h2>Current Polls:</h2>
+<div id="navi">
+    <a href="/create">Create a New Poll</a>
+    <a href="/logout">Log Out</a>
+</div>
+
+<br>
+
+<div id="search">
+    <input type="text" name="search" [(ngModel)]="search" placeholder="Search">
+</div>
+
+<br>
+
+<div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Survey Question</th>
+            <th>Date Posted</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let question of questions; let user of users">
+            <td>{{ user.name }}</td>
+            <td>{{ question.question }}</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
